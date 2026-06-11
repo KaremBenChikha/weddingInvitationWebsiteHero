@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { WelcomePopup } from "@/components/WelcomePopup";
+import { EnvelopeReveal } from "@/components/EnvelopeReveal";
 import { HeroSection } from "@/components/HeroSection";
 import { InvitationSection } from "@/components/InvitationSection";
 import { DressCodeSection } from "@/components/DressCodeSection";
@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      {!popupDismissed && <WelcomePopup onDismiss={handleDismiss} />}
+      {!popupDismissed && <EnvelopeReveal onDismiss={handleDismiss} />}
 
       <main>
         <GoldParticles />
