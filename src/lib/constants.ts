@@ -9,7 +9,7 @@ export const WEDDING = {
   dateLabelAr: "١١ يوليو ٢٠٢٦ · ١٤:٠٠",
   location: "Trois-Rivières, Québec",
   locationAr: "تروا ريفيير، كيبيك",
-  address: "187 rue Bourassa, Trois-Rivières QC G9B 1C4",
+  address: "187 rue Bourassa, Trois-Rivières QC G9B 1C4, Canada",
 };
 
 export const TIMELINE = [
