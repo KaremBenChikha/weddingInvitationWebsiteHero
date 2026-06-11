@@ -49,7 +49,18 @@ export function RsvpSection() {
             <path d="M14 24L21 31L34 17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <p className="font-display text-2xl md:text-3xl text-gold-accent mb-2">{CONTENT.rsvpSuccess}</p>
-          <p className="font-arabic text-lg text-gold-accent/50" dir="rtl">{CONTENT.rsvpSuccessAr}</p>
+          <p className="font-arabic text-lg text-gold-accent/50 mb-8" dir="rtl">{CONTENT.rsvpSuccessAr}</p>
+
+          <a
+            href="/wedding.ics"
+            className="inline-flex items-center gap-3 px-6 py-3 border border-gold-accent/30 rounded-sm hover:border-gold-accent hover:bg-gold-accent/5 transition-all duration-300"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            <span className="font-body text-sm text-text/80">Ajouter au calendrier</span>
+          </a>
         </motion.div>
       </SectionWrapper>
     );
