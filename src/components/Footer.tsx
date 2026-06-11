@@ -1,14 +1,50 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { COUPLE } from "@/lib/constants";
+import { COUPLE, WEDDING } from "@/lib/constants";
 
 export function Footer() {
   const reduce = useReducedMotion();
 
   return (
-    <footer className="relative py-16 px-6 text-center bg-surface-alt overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
+    <footer className="relative bg-surface-alt overflow-hidden">
+      {/* Large photo placeholder with gradient fade */}
+      <div className="relative w-full max-w-lg mx-auto">
+        {/* Photo */}
+        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border flex items-center justify-center rounded-b-[30px] overflow-hidden">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent/20">
+            <path d="M24 0L29.39 18.61L48 24L29.39 29.39L24 48L18.61 29.39L0 24L18.61 18.61L24 0Z" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* Gradient fade overlay on top */}
+        <div
+          className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, #f5efe4 0%, transparent 100%)" }}
+        />
+      </div>
+
+      {/* Text */}
+      <motion.div
+        className="text-center py-16 px-6"
+        initial={reduce ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <p className="font-display text-3xl md:text-4xl gold-text mb-2">
+          {COUPLE.latin}
+        </p>
+        <p className="font-arabic text-xl text-gold-accent/50 mb-1" dir="rtl">
+          {COUPLE.arabic}
+        </p>
+        <p className="font-body text-sm text-text/30 mt-6">
+          {WEDDING.dateTime} — {WEDDING.location}
+        </p>
+      </motion.div>
+
+      {/* Mandala background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
         <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
           <circle cx="160" cy="160" r="158" stroke="#d4a843" strokeWidth="1" />
           <circle cx="160" cy="160" r="130" stroke="#d4a843" strokeWidth="0.5" />
@@ -23,24 +59,6 @@ export function Footer() {
           <circle cx="160" cy="160" r="60" stroke="#d4a843" strokeWidth="0.3" strokeDasharray="4 4" />
         </svg>
       </div>
-
-      <motion.div
-        className="relative z-10"
-        initial={reduce ? false : { opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <p className="font-display text-2xl md:text-3xl gold-text mb-2">
-          {COUPLE.latin}
-        </p>
-        <p className="font-arabic text-xl text-gold-accent/50" dir="rtl">
-          {COUPLE.arabic}
-        </p>
-        <p className="font-body text-sm text-text/30 mt-8">
-          11.07.2026 — Trois-Rivières, Québec
-        </p>
-      </motion.div>
     </footer>
   );
 }
