@@ -7,6 +7,7 @@ import { InvitationSection } from "@/components/InvitationSection";
 import { TimelineSection } from "@/components/TimelineSection";
 import { GallerySection } from "@/components/GallerySection";
 import { ContactSection } from "@/components/ContactSection";
+import { MapSection } from "@/components/MapSection";
 import { Footer } from "@/components/Footer";
 import { AudioPlayer } from "@/components/AudioPlayer";
 
@@ -28,6 +29,7 @@ export default function Home() {
         <TimelineSection />
         <GallerySection />
         <ContactSection />
+        <MapSection />
         <Footer />
       </main>
 
