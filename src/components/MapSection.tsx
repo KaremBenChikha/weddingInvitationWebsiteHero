@@ -15,7 +15,7 @@ export function MapSection() {
         <div className="w-full max-w-lg mx-auto border border-gold-accent/30 rounded-sm overflow-hidden">
           <iframe
             title="Trois-Rivières"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-72.605,46.320,-72.590,46.332&layer=mapnik&marker=46.3262789,-72.5971495"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-72.588,46.302,-72.577,46.312&layer=mapnik&marker=46.3075853,-72.58248"
             width="100%"
             height="320"
             className="block"
@@ -24,7 +24,7 @@ export function MapSection() {
           />
 
           <a
-            href="https://www.openstreetmap.org/?mlat=46.3262789&mlon=-72.5971495#map=13/46.3262789/-72.5971495"
+            href="https://www.openstreetmap.org/?mlat=46.3075853&mlon=-72.58248#map=16/46.3075853/-72.58248"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center py-3 font-body text-sm text-text/50 hover:text-gold-accent transition-colors bg-surface-alt"

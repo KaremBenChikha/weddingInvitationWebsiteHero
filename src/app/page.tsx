@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import { WelcomePopup } from "@/components/WelcomePopup";
 import { HeroSection } from "@/components/HeroSection";
-import { ScratchReveal } from "@/components/ScratchReveal";
 import { InvitationSection } from "@/components/InvitationSection";
 import { DressCodeSection } from "@/components/DressCodeSection";
 import { TimelineSection } from "@/components/TimelineSection";
@@ -30,7 +29,6 @@ export default function Home() {
       <main>
         <GoldParticles />
         <HeroSection />
-        <ScratchReveal />
         <InvitationSection />
         <DressCodeSection />
         <TimelineSection />
