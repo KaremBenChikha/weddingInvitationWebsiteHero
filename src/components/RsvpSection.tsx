@@ -21,11 +21,15 @@ export function RsvpSection() {
     try {
       const res = await fetch(RSVP_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name.trim(), guests: Number(guests), message: message.trim() }),
       });
-      setStatus("success");
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }

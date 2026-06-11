@@ -84,4 +84,4 @@ export const DRESS_CODE_COLORS = [
   { hex: "#f5efe4", label: "Crème" },
 ];
 
-export const RSVP_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+export const RSVP_URL = "https://script.google.com/macros/s/AKfycbwmxzTZJ84GB6cUfxal58Fivgjhmtgd3H4lzdM6rQPd6zU1h5ps9sryXr7kmUmdIGjq/exec";
