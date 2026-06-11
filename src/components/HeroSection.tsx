@@ -4,7 +4,7 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 
 export function HeroSection() {
   return (
-    <SectionWrapper className="!min-h-screen bg-indigo-midnight" id="hero">
+    <SectionWrapper className="!min-h-screen bg-surface-alt" id="hero">
       <div className="animate-fade-in">
         <p className="font-body text-gold-accent/60 text-sm tracking-[0.3em] uppercase mb-8">
           {WEDDING.date}
@@ -20,15 +20,15 @@ export function HeroSection() {
 
         <GoldDivider />
 
-        <p className="font-body text-xl md:text-2xl text-cream/80 mb-2">
+        <p className="font-body text-xl md:text-2xl text-text/80 mb-2">
           {WEDDING.dateLabelFr}
         </p>
 
-        <p className="font-body text-lg md:text-xl text-cream/60">
+        <p className="font-body text-lg md:text-xl text-text/60">
           {WEDDING.location}
         </p>
 
-        <p className="font-arabic text-base text-cream/50 mt-1" dir="rtl">
+        <p className="font-arabic text-base text-text/50 mt-1" dir="rtl">
           {WEDDING.locationAr}
         </p>
 

@@ -28,11 +28,11 @@ export function WelcomePopup({ onDismiss }: WelcomePopupProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[2147483647] flex items-center justify-center bg-indigo-midnight/95 transition-opacity duration-500"
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center bg-overlay transition-opacity duration-500"
       style={{ opacity: visible ? 1 : 0 }}
     >
       <ArabesquePattern opacity={0.08} />
-      <div className="relative z-10 w-[90vw] max-w-[420px] aspect-[1.15] border border-gold-accent/30 rounded-sm flex flex-col items-center justify-center text-center px-8 py-10 bg-indigo-deep/80 backdrop-blur-sm">
+      <div className="relative z-10 w-[90vw] max-w-[420px] aspect-[1.15] border border-gold-accent/30 rounded-sm flex flex-col items-center justify-center text-center px-8 py-10 bg-surface/95 backdrop-blur-sm">
         {/* Decorative border frame */}
         <div className="absolute top-3 left-3 w-4 h-4 border-t border-l border-gold-accent/40" />
         <div className="absolute top-3 right-3 w-4 h-4 border-t border-r border-gold-accent/40" />
@@ -49,17 +49,17 @@ export function WelcomePopup({ onDismiss }: WelcomePopupProps) {
           {CONTENT.popupTitleAr}
         </p>
 
-        <p className="font-body text-lg text-cream/70 mb-8">
+        <p className="font-body text-lg text-text/70 mb-8">
           {CONTENT.popupSubtitle}
         </p>
 
-        <p className="font-arabic text-base text-cream/60 mb-8" dir="rtl">
+        <p className="font-arabic text-base text-text/60 mb-8" dir="rtl">
           {CONTENT.popupSubtitleAr}
         </p>
 
         <button
           onClick={handleDismiss}
-          className="px-8 py-3 bg-gold-accent text-indigo-deep font-display text-sm tracking-widest uppercase rounded-sm hover:bg-gold-light hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,168,67,0.3)]"
+          className="px-8 py-3 bg-gold-accent text-text font-display text-sm tracking-widest uppercase rounded-sm hover:bg-gold-light hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,168,67,0.3)]"
         >
           {CONTENT.popupCta}
           <span className="block font-arabic text-xs mt-0.5" dir="rtl">{CONTENT.popupCtaAr}</span>

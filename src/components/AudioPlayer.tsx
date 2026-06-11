@@ -48,7 +48,7 @@ export function AudioPlayer() {
     >
       <button
         onClick={togglePlay}
-        className="w-14 h-14 rounded-full bg-indigo-midnight border border-gold-accent/40 flex items-center justify-center hover:border-gold-accent hover:scale-105 hover:shadow-[0_0_25px_rgba(212,168,67,0.25)] transition-all duration-300"
+        className="w-14 h-14 rounded-full bg-surface-alt border border-gold-accent/40 flex items-center justify-center hover:border-gold-accent hover:scale-105 hover:shadow-[0_0_25px_rgba(212,168,67,0.25)] transition-all duration-300"
         aria-label={playing ? "Pause musique" : "Jouer musique"}
       >
         {playing ? (

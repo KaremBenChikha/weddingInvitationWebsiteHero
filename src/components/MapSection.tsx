@@ -26,7 +26,7 @@ export function MapSection() {
             href="https://www.openstreetmap.org/?mlat=46.350&mlon=-72.550#map=13/46.350/-72.550"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center py-3 font-body text-sm text-cream/50 hover:text-gold-accent transition-colors bg-indigo-midnight"
+            className="block text-center py-3 font-body text-sm text-text/50 hover:text-gold-accent transition-colors bg-surface-alt"
           >
             Voir sur la carte / شاهد على الخريطة
           </a>

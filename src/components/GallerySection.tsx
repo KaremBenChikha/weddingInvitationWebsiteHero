@@ -2,12 +2,12 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 
 export function GallerySection() {
   const photos = [
-    { id: 1, color: "#2a2a5e", aspect: "aspect-[3/4]" },
-    { id: 2, color: "#25255a", aspect: "aspect-square" },
-    { id: 3, color: "#30306a", aspect: "aspect-[4/5]" },
-    { id: 4, color: "#2d2d62", aspect: "aspect-[3/4]" },
-    { id: 5, color: "#28285c", aspect: "aspect-square" },
-    { id: 6, color: "#35355e", aspect: "aspect-[4/3]" },
+    { id: 1, color: "#ede8df", aspect: "aspect-[3/4]" },
+    { id: 2, color: "#e8e2d8", aspect: "aspect-square" },
+    { id: 3, color: "#f0ebe5", aspect: "aspect-[4/5]" },
+    { id: 4, color: "#ece6db", aspect: "aspect-[3/4]" },
+    { id: 5, color: "#e5dfd4", aspect: "aspect-square" },
+    { id: 6, color: "#f2ede8", aspect: "aspect-[4/3]" },
   ];
 
   return (
@@ -30,7 +30,7 @@ export function GallerySection() {
               {/* Placeholder gradient */}
               <div
                 className="w-full h-full rounded-sm"
-                style={{ background: `linear-gradient(135deg, ${photo.color}, #1a1a3e)` }}
+                style={{ background: `linear-gradient(135deg, ${photo.color}, #faf8f4)` }}
               />
 
               {/* Gold corner accents */}

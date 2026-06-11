@@ -8,7 +8,7 @@ export function InvitationSection() {
       <div className="animate-fade-in-up">
         <GoldDivider />
 
-        <p className="font-body text-2xl md:text-3xl text-cream/90 leading-relaxed mb-6">
+        <p className="font-body text-2xl md:text-3xl text-text/90 leading-relaxed mb-6">
           {CONTENT.invitationLine1}
         </p>
 
@@ -18,11 +18,11 @@ export function InvitationSection() {
 
         <GoldDivider />
 
-        <p className="font-body text-xl md:text-2xl text-cream/80 italic leading-relaxed">
+        <p className="font-body text-xl md:text-2xl text-text/80 italic leading-relaxed">
           {CONTENT.invitationLine2}
         </p>
 
-        <p className="font-arabic text-lg md:text-xl text-cream/60 italic mt-4" dir="rtl">
+        <p className="font-arabic text-lg md:text-xl text-text/60 italic mt-4" dir="rtl">
           {CONTENT.invitationLine2Ar}
         </p>
       </div>

@@ -3,7 +3,7 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 
 export function TimelineSection() {
   return (
-    <SectionWrapper id="timeline" className="bg-indigo-midnight">
+    <SectionWrapper id="timeline" className="bg-surface-alt">
       <div className="animate-fade-in-up w-full">
         <h2 className="font-display text-3xl md:text-4xl text-gold-light mb-2">
           {CONTENT.timelineTitle}
@@ -24,14 +24,14 @@ export function TimelineSection() {
                 style={{ animationDelay: `${i * 0.15}s`, animationFillMode: "forwards" }}
               >
                 {/* Time badge */}
-                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border border-gold-accent/40 bg-indigo-midnight flex items-center justify-center">
+                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border border-gold-accent/40 bg-surface-alt flex items-center justify-center">
                   <span className="font-body text-xs text-gold-accent">{item.time}</span>
                 </div>
 
                 {/* Labels */}
                 <div className="pt-1.5">
-                  <p className="font-body text-lg text-cream/90">{item.labelFr}</p>
-                  <p className="font-arabic text-sm text-cream/50" dir="rtl">{item.labelAr}</p>
+                  <p className="font-body text-lg text-text/90">{item.labelFr}</p>
+                  <p className="font-arabic text-sm text-text/50" dir="rtl">{item.labelAr}</p>
                 </div>
               </div>
             ))}

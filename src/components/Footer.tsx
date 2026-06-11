@@ -2,7 +2,7 @@ import { COUPLE } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="relative py-16 px-6 text-center bg-indigo-midnight overflow-hidden">
+    <footer className="relative py-16 px-6 text-center bg-surface-alt overflow-hidden">
       {/* Large mandala background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
         <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
@@ -27,7 +27,7 @@ export function Footer() {
         <p className="font-arabic text-xl text-gold-accent/50" dir="rtl">
           {COUPLE.arabic}
         </p>
-        <p className="font-body text-sm text-cream/30 mt-8">
+        <p className="font-body text-sm text-text/30 mt-8">
           11.07.2026 — Trois-Rivières, Québec
         </p>
       </div>
