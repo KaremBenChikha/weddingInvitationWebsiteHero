@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, useCallback } from "react";
+import { useState, useRef, FormEvent, useCallback } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { GoldDivider } from "./ui/GoldDivider";
@@ -8,32 +8,32 @@ import { CONTENT, RSVP_URL } from "@/lib/constants";
 
 export function RsvpSection() {
   const reduce = useReducedMotion();
+  const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState("");
   const [guests, setGuests] = useState("1");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = useCallback(async (e: FormEvent) => {
+  const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
     setStatus("loading");
 
-    try {
-      const res = await fetch(RSVP_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), guests: Number(guests), message: message.trim() }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  }, [name, guests, message]);
+    const iframe = document.createElement("iframe");
+    iframe.name = "rsvp-frame";
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+
+    const form = formRef.current;
+    if (!form) return;
+    form.target = "rsvp-frame";
+    form.submit();
+
+    setTimeout(() => {
+      setStatus("success");
+      document.body.removeChild(iframe);
+    }, 1500);
+  }, [name]);
 
   if (status === "success") {
     return (
@@ -74,13 +74,14 @@ export function RsvpSection() {
 
         <GoldDivider />
 
-        <form onSubmit={handleSubmit} className="w-full space-y-5">
+        <form ref={formRef} onSubmit={handleSubmit} action={RSVP_URL} method="POST" className="w-full space-y-5">
           <div>
             <label className="block font-body text-sm text-text/60 mb-1.5">
               {CONTENT.rsvpNameLabel}
             </label>
             <input
               type="text"
+              name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -94,6 +95,7 @@ export function RsvpSection() {
               {CONTENT.rsvpGuestsLabel}
             </label>
             <select
+              name="guests"
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
               className="w-full px-4 py-3 bg-surface-alt border border-border rounded-sm font-body text-text focus:outline-none focus:border-gold-accent transition-colors appearance-none cursor-pointer"
@@ -111,6 +113,7 @@ export function RsvpSection() {
               {CONTENT.rsvpMessageLabel}
             </label>
             <textarea
+              name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={3}

@@ -22,7 +22,7 @@ export const TIMELINE = [
 ];
 
 export const CONTACT = {
-  phone: "+1 819 555 0123",
+  phone: "+1 819-701-6607",
 };
 
 export const CONTENT = {
