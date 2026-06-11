@@ -10,6 +10,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { MapSection } from "@/components/MapSection";
 import { Footer } from "@/components/Footer";
 import { AudioPlayer } from "@/components/AudioPlayer";
+import { GoldParticles } from "@/components/GoldParticles";
 
 export default function Home() {
   const [popupDismissed, setPopupDismissed] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
       {!popupDismissed && <WelcomePopup onDismiss={handleDismiss} />}
 
       <main>
+        <GoldParticles />
         <HeroSection />
         <InvitationSection />
         <TimelineSection />

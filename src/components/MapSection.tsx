@@ -3,8 +3,7 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 export function MapSection() {
   return (
     <SectionWrapper id="map" showPattern={false}>
-      <div className="animate-fade-in-up w-full">
-        <h2 className="font-display text-3xl md:text-4xl text-gold-light mb-2">
+        <h2 className="font-display text-3xl md:text-4xl text-gold-accent mb-2">
           Lieu
         </h2>
         <p className="font-arabic text-xl text-gold-accent/50 mb-8" dir="rtl">
@@ -31,7 +30,6 @@ export function MapSection() {
             Voir sur la carte / شاهد على الخريطة
           </a>
         </div>
-      </div>
     </SectionWrapper>
   );
 }

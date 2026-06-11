@@ -5,8 +5,7 @@ import { GoldDivider } from "./ui/GoldDivider";
 export function ContactSection() {
   return (
     <SectionWrapper id="contact" className="bg-surface-alt">
-      <div className="animate-fade-in-up">
-        <h2 className="font-display text-3xl md:text-4xl text-gold-light mb-2">
+        <h2 className="font-display text-3xl md:text-4xl text-gold-accent mb-2">
           {CONTENT.contactTitle}
         </h2>
         <p className="font-arabic text-xl text-gold-accent/50 mb-8" dir="rtl">
@@ -28,7 +27,6 @@ export function ContactSection() {
           </svg>
           <span className="font-body text-2xl text-text/90 tracking-wide">{CONTACT.phone}</span>
         </a>
-      </div>
     </SectionWrapper>
   );
 }

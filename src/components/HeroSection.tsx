@@ -5,8 +5,7 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 export function HeroSection() {
   return (
     <SectionWrapper className="!min-h-screen bg-surface-alt" id="hero">
-      <div className="animate-fade-in">
-        <p className="font-body text-gold-accent/60 text-sm tracking-[0.3em] uppercase mb-8">
+      <p className="font-body text-gold-accent/60 text-sm tracking-[0.3em] uppercase mb-8">
           {WEDDING.date}
         </p>
 
@@ -38,7 +37,6 @@ export function HeroSection() {
             <path d="M12 5L12 19M12 19L6 13M12 19L18 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-      </div>
     </SectionWrapper>
   );
 }

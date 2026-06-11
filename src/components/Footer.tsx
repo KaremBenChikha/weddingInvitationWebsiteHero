@@ -1,10 +1,14 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
 import { COUPLE } from "@/lib/constants";
 
 export function Footer() {
+  const reduce = useReducedMotion();
+
   return (
     <footer className="relative py-16 px-6 text-center bg-surface-alt overflow-hidden">
-      {/* Large mandala background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
         <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
           <circle cx="160" cy="160" r="158" stroke="#d4a843" strokeWidth="1" />
           <circle cx="160" cy="160" r="130" stroke="#d4a843" strokeWidth="0.5" />
@@ -20,7 +24,13 @@ export function Footer() {
         </svg>
       </div>
 
-      <div className="relative z-10">
+      <motion.div
+        className="relative z-10"
+        initial={reduce ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <p className="font-display text-2xl md:text-3xl gold-text mb-2">
           {COUPLE.latin}
         </p>
@@ -30,7 +40,7 @@ export function Footer() {
         <p className="font-body text-sm text-text/30 mt-8">
           11.07.2026 — Trois-Rivières, Québec
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 }
