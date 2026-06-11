@@ -63,7 +63,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
     opening: {
       scale: [1, 1.3, 0],
       opacity: [1, 0.8, 0],
-      transition: { duration: 0.6, ease: "easeInOut" },
+      transition: { duration: 0.6, ease: "easeInOut" as const },
     },
   };
 
@@ -71,28 +71,28 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
     idle: { rotateX: 0 },
     opening: {
       rotateX: -105,
-      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
   const bottomFlap = {
     idle: { rotateX: 0 },
     opening: {
       rotateX: 105,
-      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
   const leftFlap = {
     idle: { rotateY: 0 },
     opening: {
       rotateY: 105,
-      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
   const rightFlap = {
     idle: { rotateY: 0 },
     opening: {
       rotateY: -105,
-      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
@@ -102,7 +102,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
