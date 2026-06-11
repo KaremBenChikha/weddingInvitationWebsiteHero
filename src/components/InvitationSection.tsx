@@ -19,6 +19,21 @@ export function InvitationSection() {
       >
         <GoldDivider />
 
+        {/* Arabic calligraphy header SVG */}
+        <motion.div
+          className="w-full max-w-lg mx-auto mb-6"
+          initial={reduce ? false : { opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <img
+            src="/images/arabic-bismillah.svg"
+            alt="بسم الله الرحمن الرحيم"
+            className="w-full h-auto"
+          />
+        </motion.div>
+
         {/* Letter card */}
         <div className="relative max-w-lg mx-auto bg-surface rounded-sm shadow-[0_2px_40px_rgba(0,0,0,0.04)] border border-border/50 px-8 py-10 md:px-12 md:py-14">
           {/* Decorative corners */}
@@ -41,11 +56,13 @@ export function InvitationSection() {
             {CONTENT.invitationBody}
           </p>
 
-          <p className="font-arabic text-sm text-text/40 leading-relaxed whitespace-pre-line mb-8" dir="rtl">
+          <div className="w-16 h-px bg-gold-accent/30 mx-auto mb-8" />
+
+          <p className="font-arabic text-base md:text-lg text-text/60 leading-[2.2] whitespace-pre-line mb-8" dir="rtl">
             {CONTENT.invitationBodyAr}
           </p>
 
-          <p className="font-display text-2xl md:text-3xl gold-text text-right">
+          <p className="font-display text-2xl md:text-3xl gold-text text-center">
             {COUPLE.latin}
           </p>
         </div>

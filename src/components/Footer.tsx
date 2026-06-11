@@ -11,11 +11,7 @@ export function Footer() {
       {/* Large photo placeholder with gradient fade */}
       <div className="relative w-full max-w-lg mx-auto">
         {/* Photo */}
-        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border flex items-center justify-center rounded-b-[30px] overflow-hidden">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent/20">
-            <path d="M24 0L29.39 18.61L48 24L29.39 29.39L24 48L18.61 29.39L0 24L18.61 18.61L24 0Z" fill="currentColor" />
-          </svg>
-        </div>
+        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border flex items-center justify-center rounded-b-[30px] overflow-hidden" />
 
         {/* Gradient fade overlay on top */}
         <div
