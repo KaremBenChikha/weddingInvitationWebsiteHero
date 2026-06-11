@@ -37,18 +37,18 @@ export function DressCodeSection() {
               transition={{ delay: i * 0.1, duration: 0.4 }}
             >
               <div
-                className="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gold-accent/20 shadow-sm"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gold-accent/20 shadow-sm hover:scale-110 hover:border-gold-accent/50 hover:shadow-[0_0_20px_rgba(212,168,67,0.15)] transition-all duration-300 cursor-default"
                 style={{ backgroundColor: color.hex }}
               />
-              <span className="font-body text-xs text-text/50">{color.label}</span>
+              <span className="font-body text-xs text-text/70">{color.label}</span>
             </motion.div>
           ))}
         </div>
 
-        <p className="font-body text-base md:text-lg text-text/60 max-w-md leading-relaxed">
+        <p className="font-body text-base md:text-lg text-text/70 max-w-md leading-relaxed">
           {CONTENT.dressCodeBody}
         </p>
-        <p className="font-arabic text-sm text-text/40 mt-3 max-w-md" dir="rtl">
+        <p className="font-arabic text-sm md:text-base text-text/60 mt-3 max-w-md leading-relaxed" dir="rtl">
           {CONTENT.dressCodeBodyAr}
         </p>
       </motion.div>

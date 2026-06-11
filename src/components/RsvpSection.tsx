@@ -49,11 +49,11 @@ export function RsvpSection() {
             <path d="M14 24L21 31L34 17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <p className="font-display text-2xl md:text-3xl text-gold-accent mb-2">{CONTENT.rsvpSuccess}</p>
-          <p className="font-arabic text-lg text-gold-accent/50 mb-8" dir="rtl">{CONTENT.rsvpSuccessAr}</p>
+          <p className="font-arabic text-lg text-gold-accent/60 mb-8" dir="rtl">{CONTENT.rsvpSuccessAr}</p>
 
           <a
             href="/wedding.ics"
-            className="inline-flex items-center gap-3 px-6 py-3 border border-gold-accent/30 rounded-sm hover:border-gold-accent hover:bg-gold-accent/5 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-6 py-3 border border-gold-accent/30 rounded-sm hover:border-gold-accent hover:bg-gold-accent/5 transition-all duration-300 cursor-pointer"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent">
               <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -78,10 +78,10 @@ export function RsvpSection() {
         <h2 className="font-display text-3xl md:text-4xl text-gold-accent mb-2">
           {CONTENT.rsvpTitle}
         </h2>
-        <p className="font-arabic text-xl text-gold-accent/50 mb-2" dir="rtl">
+        <p className="font-arabic text-xl text-gold-accent/60 mb-2" dir="rtl">
           {CONTENT.rsvpTitleAr}
         </p>
-        <p className="font-body text-sm text-text/40 mb-8">{CONTENT.rsvpSubtitle}</p>
+        <p className="font-body text-sm text-text/60 mb-8">{CONTENT.rsvpSubtitle}</p>
 
         <GoldDivider />
 
@@ -96,7 +96,7 @@ export function RsvpSection() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full px-4 py-3 bg-surface-alt border border-border rounded-sm font-body text-text placeholder:text-text/25 focus:outline-none focus:border-gold-accent transition-colors"
+              className="w-full px-4 py-3.5 bg-surface-alt border border-border/80 rounded-sm font-body text-text placeholder:text-text/30 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all"
               placeholder={CONTENT.rsvpNameLabelAr}
             />
           </div>
@@ -140,7 +140,7 @@ export function RsvpSection() {
           <button
             type="submit"
             disabled={status === "loading" || !name.trim()}
-            className="w-full py-3 bg-gold-accent text-text font-display text-sm tracking-widest uppercase rounded-sm hover:bg-gold-light disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            className="w-full py-3.5 bg-gold-accent text-text font-display text-sm tracking-[0.2em] uppercase rounded-sm hover:bg-gold-light hover:shadow-[0_0_30px_rgba(212,168,67,0.25)] disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
           >
             {status === "loading" ? "..." : CONTENT.rsvpSubmit}
           </button>

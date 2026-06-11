@@ -134,7 +134,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
               </p>
               <button
                 onClick={handleSkip}
-                className="font-body text-sm text-text/40 hover:text-text/70 transition-colors cursor-pointer"
+                className="font-body text-sm text-text/60 hover:text-gold-accent transition-colors cursor-pointer"
               >
                 {CONTENT.envelopeSkip} / {CONTENT.envelopeSkipAr}
               </button>
@@ -182,7 +182,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
           </div>
 
           <div className="perspective-envelope relative w-[88vw] max-w-[340px] md:max-w-[380px] aspect-[3/4]">
-            <div className="absolute inset-0 bg-surface border border-gold-accent/20 rounded-sm flex items-center justify-center">
+            <div className="absolute inset-0 bg-surface/90 backdrop-blur-sm border border-gold-accent/25 rounded-sm flex items-center justify-center">
               <div className="absolute top-2 left-2 w-3 h-3 border-t border-l border-gold-accent/30" />
               <div className="absolute top-2 right-2 w-3 h-3 border-t border-r border-gold-accent/30" />
               <div className="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-gold-accent/30" />
@@ -251,7 +251,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             />
 
             <motion.div
-              className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-110 transition-transform duration-300"
               variants={sealVariants}
               animate={
                 stage !== "idle" ? "opening" : "idle"
@@ -304,10 +304,10 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <p className="font-body text-sm text-text/40 animate-gold-shimmer">
+                <p className="font-body text-sm text-text/60 animate-gold-shimmer">
                   {CONTENT.envelopeHint}
                 </p>
-                <p className="font-arabic text-xs text-text/30 mt-0.5" dir="rtl">
+                <p className="font-arabic text-xs text-text/40 mt-0.5" dir="rtl">
                   {CONTENT.envelopeHintAr}
                 </p>
               </motion.div>
@@ -315,7 +315,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
 
             {stage === "idle" && (
               <motion.button
-                className="absolute -bottom-28 left-1/2 -translate-x-1/2 font-body text-xs text-text/30 hover:text-text/50 transition-colors cursor-pointer"
+                className="absolute -bottom-28 left-1/2 -translate-x-1/2 font-body text-xs text-text/40 hover:text-gold-accent transition-colors cursor-pointer"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}

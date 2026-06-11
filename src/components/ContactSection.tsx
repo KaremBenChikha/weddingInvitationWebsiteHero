@@ -14,10 +14,10 @@ export function ContactSection() {
 
         <GoldDivider />
 
-        <p className="font-body text-lg text-text/50 mb-4">
+        <p className="font-body text-lg text-text/70 mb-4">
           N&apos;hésitez pas à nous contacter
         </p>
-        <p className="font-arabic text-base text-text/30 mb-6" dir="rtl">
+        <p className="font-arabic text-base text-text/60 mb-6" dir="rtl">
           لا تترددوا في الاتصال بنا
         </p>
 

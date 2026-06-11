@@ -10,7 +10,7 @@ export function MapSection() {
         <p className="font-arabic text-xl text-gold-accent/50 mb-2" dir="rtl">
           الموقع
         </p>
-        <p className="font-body text-base text-text/50 mb-8">{WEDDING.address}</p>
+        <p className="font-body text-base text-text/70 mb-8">{WEDDING.address}</p>
 
         <div className="w-full max-w-lg mx-auto border border-gold-accent/30 rounded-sm overflow-hidden">
           <iframe
@@ -27,7 +27,7 @@ export function MapSection() {
             href="https://www.openstreetmap.org/?mlat=46.3075853&mlon=-72.58248#map=16/46.3075853/-72.58248"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center py-3 font-body text-sm text-text/50 hover:text-gold-accent transition-colors bg-surface-alt"
+            className="block text-center py-3 font-body text-sm text-text/60 hover:text-gold-accent transition-colors bg-surface-alt"
           >
             Voir sur la carte / شاهد على الخريطة
           </a>

@@ -11,7 +11,7 @@ export function Footer() {
       {/* Large photo placeholder with gradient fade */}
       <div className="relative w-full max-w-lg mx-auto">
         {/* Photo */}
-        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border flex items-center justify-center rounded-b-[30px] overflow-hidden" />
+        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border rounded-b-[30px] overflow-hidden" />
 
         {/* Gradient fade overlay on top */}
         <div
@@ -31,10 +31,10 @@ export function Footer() {
         <p className="font-display text-3xl md:text-4xl gold-text mb-2">
           {COUPLE.latin}
         </p>
-        <p className="font-arabic text-xl text-gold-accent/50 mb-1" dir="rtl">
+        <p className="font-arabic text-xl text-gold-accent/60 mb-1" dir="rtl">
           {COUPLE.arabic}
         </p>
-        <p className="font-body text-sm text-text/30 mt-6">
+        <p className="font-body text-sm text-text/50 mt-6">
           {WEDDING.dateTime} — {WEDDING.location}
         </p>
       </motion.div>

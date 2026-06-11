@@ -17,7 +17,7 @@ export function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="font-body text-gold-accent/60 text-sm tracking-[0.3em] uppercase mb-4">
+        <p className="font-body text-gold-accent/80 text-sm tracking-[0.25em] uppercase mb-4">
           {WEDDING.date}
         </p>
 
@@ -39,7 +39,7 @@ export function HeroSection() {
           {WEDDING.location}
         </p>
 
-        <p className="font-arabic text-base text-text/40" dir="rtl">
+        <p className="font-arabic text-base text-text/60" dir="rtl">
           {WEDDING.locationAr}
         </p>
       </motion.div>

@@ -33,13 +33,13 @@ export function TimelineSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border border-gold-accent/40 bg-surface-alt flex items-center justify-center">
+              <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border border-gold-accent/50 bg-surface-alt/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
                 <span className="font-body text-xs text-gold-accent">{item.time}</span>
               </div>
 
               <div className="pt-1.5">
                 <p className="font-body text-lg text-text/90">{item.labelFr}</p>
-                <p className="font-arabic text-sm text-text/50" dir="rtl">{item.labelAr}</p>
+                <p className="font-arabic text-sm text-text/60" dir="rtl">{item.labelAr}</p>
               </div>
             </motion.div>
           ))}

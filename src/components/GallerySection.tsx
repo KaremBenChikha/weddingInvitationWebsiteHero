@@ -55,7 +55,7 @@ export function GallerySection() {
         <h2 className="font-display text-3xl md:text-4xl text-gold-accent mb-2 text-center">
           {CONTENT.galleryTitle}
         </h2>
-        <p className="font-arabic text-xl text-gold-accent/50 mb-10 text-center" dir="rtl">
+        <p className="font-arabic text-xl text-gold-accent/60 mb-10 text-center" dir="rtl">
           {CONTENT.galleryTitleAr}
         </p>
 

@@ -35,7 +35,7 @@ export function InvitationSection() {
         </motion.div>
 
         {/* Letter card */}
-        <div className="relative max-w-lg mx-auto bg-surface rounded-sm shadow-[0_2px_40px_rgba(0,0,0,0.04)] border border-border/50 px-8 py-10 md:px-12 md:py-14">
+        <div className="relative max-w-lg mx-auto bg-surface/80 backdrop-blur-sm rounded-sm shadow-[0_2px_48px_rgba(0,0,0,0.05)] border border-gold-accent/15 px-8 py-10 md:px-14 md:py-16">
           {/* Decorative corners */}
           <div className="absolute top-3 left-3 w-5 h-5 border-t border-l border-gold-accent/30" />
           <div className="absolute top-3 right-3 w-5 h-5 border-t border-r border-gold-accent/30" />
@@ -73,7 +73,7 @@ export function InvitationSection() {
           {CONTENT.invitationLine2}
         </p>
 
-        <p className="font-arabic text-lg md:text-xl text-text/40 italic mt-2" dir="rtl">
+        <p className="font-arabic text-lg md:text-xl text-text/60 italic mt-2" dir="rtl">
           {CONTENT.invitationLine2Ar}
         </p>
       </motion.div>
