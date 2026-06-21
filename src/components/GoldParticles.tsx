@@ -17,6 +17,8 @@ export function GoldParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -25,7 +27,8 @@ export function GoldParticles() {
 
     let animId: number;
     const particles: Particle[] = [];
-    const count = 55;
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 20 : 55;
 
     const resize = () => {
       canvas.width = window.innerWidth;
