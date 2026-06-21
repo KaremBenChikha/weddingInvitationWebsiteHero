@@ -26,7 +26,8 @@ export function GallerySection() {
     if (!track) return;
     const slide = track.children[index] as HTMLElement;
     if (!slide) return;
-    track.scrollTo({ left: slide.offsetLeft - 16, behavior: "smooth" });
+    const gap = parseFloat(getComputedStyle(track).gap) || 16;
+    track.scrollTo({ left: slide.offsetLeft - gap, behavior: "smooth" });
     setCurrent(index);
   }, []);
 
@@ -36,7 +37,8 @@ export function GallerySection() {
     const handleScroll = () => {
       if (!track) return;
       const slideWidth = track.children[0]?.clientWidth || 280;
-      const idx = Math.round(track.scrollLeft / (slideWidth + 16));
+      const gap = parseFloat(getComputedStyle(track).gap) || 16;
+      const idx = Math.round(track.scrollLeft / (slideWidth + gap));
       setCurrent(idx);
     };
     track.addEventListener("scroll", handleScroll, { passive: true });
@@ -91,6 +93,13 @@ export function GallerySection() {
             </div>
           ))}
         </div>
+
+        <p className="font-body text-sm text-text/40 text-center mt-4 italic">
+          Photos à venir...
+        </p>
+        <p className="font-arabic text-xs text-text/30 text-center" dir="rtl">
+          الصور قريباً...
+        </p>
 
         {/* Dots */}
         <div className="flex justify-center gap-2 mt-6">
