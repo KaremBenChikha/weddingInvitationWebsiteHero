@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, FormEvent, useCallback } from "react";
+import { useState, FormEvent, useCallback } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { GoldDivider } from "./ui/GoldDivider";
@@ -8,32 +8,35 @@ import { CONTENT, RSVP_URL } from "@/lib/constants";
 
 export function RsvpSection() {
   const reduce = useReducedMotion();
-  const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState("");
   const [guests, setGuests] = useState("1");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [nameTouched, setNameTouched] = useState(false);
 
-  const handleSubmit = useCallback((e: FormEvent) => {
+  const handleSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
     setStatus("loading");
 
-    const iframe = document.createElement("iframe");
-    iframe.name = "rsvp-frame";
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
+    try {
+      const body = new URLSearchParams({ name, guests, message });
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
 
-    const form = formRef.current;
-    if (!form) return;
-    form.target = "rsvp-frame";
-    form.submit();
+      await fetch(RSVP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body,
+        signal: controller.signal,
+      });
 
-    setTimeout(() => {
+      clearTimeout(timeout);
       setStatus("success");
-      document.body.removeChild(iframe);
-    }, 1500);
-  }, [name]);
+    } catch {
+      setStatus("error");
+    }
+  }, [name, guests, message]);
 
   if (status === "success") {
     return (
@@ -85,7 +88,7 @@ export function RsvpSection() {
 
         <GoldDivider />
 
-        <form ref={formRef} onSubmit={handleSubmit} action={RSVP_URL} method="POST" className="w-full space-y-5">
+        <form onSubmit={handleSubmit} action={RSVP_URL} method="POST" className="w-full space-y-5">
           <div>
             <label className="block font-body text-sm text-text/60 mb-1.5">
               {CONTENT.rsvpNameLabel}
@@ -94,11 +97,18 @@ export function RsvpSection() {
               type="text"
               name="name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value);
+                if (e.target.value.trim()) setNameTouched(false);
+              }}
+              onBlur={() => setNameTouched(true)}
               required
               className="w-full px-4 py-3.5 bg-surface-alt border border-border/80 rounded-sm font-body text-text placeholder:text-text/30 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent/20 transition-all"
               placeholder={CONTENT.rsvpNameLabelAr}
             />
+            {nameTouched && !name.trim() && (
+              <p className="font-body text-xs text-red-400/80 mt-1">Ce champ est requis</p>
+            )}
           </div>
 
           <div>
@@ -140,9 +150,17 @@ export function RsvpSection() {
           <button
             type="submit"
             disabled={status === "loading" || !name.trim()}
-            className="w-full py-3.5 bg-gold-accent text-text font-display text-sm tracking-[0.2em] uppercase rounded-sm hover:bg-gold-light hover:shadow-[0_0_30px_rgba(212,168,67,0.25)] disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
+            className="w-full py-3.5 bg-gold-accent text-text font-display text-sm tracking-[0.2em] uppercase rounded-sm hover:bg-gold-light hover:shadow-[0_0_30px_rgba(212,168,67,0.25)] disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer flex items-center justify-center gap-3"
           >
-            {status === "loading" ? "..." : CONTENT.rsvpSubmit}
+            {status === "loading" ? (
+              <>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="opacity-75" />
+                </svg>
+                <span>Envoi...</span>
+              </>
+            ) : CONTENT.rsvpSubmit}
           </button>
         </form>
       </motion.div>
