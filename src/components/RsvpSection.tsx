@@ -19,10 +19,11 @@ export function RsvpSection() {
     if (!name.trim()) return;
     setStatus("loading");
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     try {
       const body = new URLSearchParams({ name, guests, message });
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000);
 
       await fetch(RSVP_URL, {
         method: "POST",
@@ -31,10 +32,11 @@ export function RsvpSection() {
         signal: controller.signal,
       });
 
-      clearTimeout(timeout);
       setStatus("success");
     } catch {
       setStatus("error");
+    } finally {
+      clearTimeout(timeout);
     }
   }, [name, guests, message]);
 
@@ -88,7 +90,7 @@ export function RsvpSection() {
 
         <GoldDivider />
 
-        <form onSubmit={handleSubmit} action={RSVP_URL} method="POST" className="w-full space-y-5">
+        <form onSubmit={handleSubmit} className="w-full space-y-5">
           <div>
             <label className="block font-body text-sm text-text/60 mb-1.5">
               {CONTENT.rsvpNameLabel}
