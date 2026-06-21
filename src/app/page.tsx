@@ -13,6 +13,7 @@ import { MapSection } from "@/components/MapSection";
 import { Footer } from "@/components/Footer";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { GoldParticles } from "@/components/GoldParticles";
+import { NavBar } from "@/components/NavBar";
 
 export default function Home() {
   const [popupDismissed, setPopupDismissed] = useState(false);
@@ -40,6 +41,7 @@ export default function Home() {
       </main>
 
       <AudioPlayer />
+      <NavBar />
     </>
   );
 }
