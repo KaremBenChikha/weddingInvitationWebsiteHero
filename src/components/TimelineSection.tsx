@@ -24,12 +24,12 @@ export function TimelineSection() {
             <motion.div
               key={i}
               className="flex items-start gap-6"
-              initial={reduce ? false : { opacity: 0, x: -16 }}
+              initial={reduce ? false : { opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{
-                duration: 0.6,
-                delay: i * 0.12,
+                duration: 0.5,
+                delay: i * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
             >

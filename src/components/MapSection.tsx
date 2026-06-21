@@ -12,13 +12,11 @@ export function MapSection() {
         </p>
         <p className="font-body text-base text-text/70 mb-8">{WEDDING.address}</p>
 
-        <div className="w-full max-w-lg mx-auto border border-gold-accent/30 rounded-sm overflow-hidden">
+        <div className="relative w-full max-w-lg mx-auto aspect-[4/3] border border-gold-accent/30 rounded-sm overflow-hidden">
           <iframe
             title="Trois-Rivières"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-72.588,46.302,-72.577,46.312&layer=mapnik&marker=46.3075853,-72.58248"
-            width="100%"
-            height="320"
-            className="block"
+            className="absolute inset-0 w-full h-full"
             loading="lazy"
             style={{ border: 0 }}
           />
