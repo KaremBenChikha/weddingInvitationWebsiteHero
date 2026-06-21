@@ -251,50 +251,55 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             />
 
             <motion.div
-              className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:scale-110 transition-transform duration-300"
+              className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
               variants={sealVariants}
               animate={
                 stage !== "idle" ? "opening" : "idle"
               }
-              onClick={handleTap}
-              onKeyDown={handleKeyDown}
-              role="button"
-              tabIndex={0}
-              aria-label={CONTENT.envelopeLabel}
               style={{ pointerEvents: stage === "idle" ? "auto" : "none" }}
             >
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="p-4 -m-4 cursor-pointer hover:scale-110 transition-transform duration-300"
+                onClick={handleTap}
+                onKeyDown={handleKeyDown}
+                role="button"
+                tabIndex={0}
+                aria-label={CONTENT.envelopeLabel}
               >
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="23"
-                  fill="url(#seal-grad)"
-                  stroke="#b8922e"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M24 2L28.5 22.5L48 24L28.5 25.5L24 46L19.5 25.5L0 24L19.5 22.5L24 2Z"
-                  fill="#e8d5a3"
-                  opacity="0.7"
-                />
-                <path
-                  d="M24 6L26.5 22.5L42 24L26.5 25.5L24 42L21.5 25.5L6 24L21.5 22.5L24 6Z"
-                  fill="#d4a843"
-                />
-                <defs>
-                  <radialGradient id="seal-grad" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#f0e0b0" />
-                    <stop offset="60%" stopColor="#d4a843" />
-                    <stop offset="100%" stopColor="#a67c22" />
-                  </radialGradient>
-                </defs>
-              </svg>
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="pointer-events-none"
+                >
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="23"
+                    fill="url(#seal-grad)"
+                    stroke="#b8922e"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M24 2L28.5 22.5L48 24L28.5 25.5L24 46L19.5 25.5L0 24L19.5 22.5L24 2Z"
+                    fill="#e8d5a3"
+                    opacity="0.7"
+                  />
+                  <path
+                    d="M24 6L26.5 22.5L42 24L26.5 25.5L24 42L21.5 25.5L6 24L21.5 22.5L24 6Z"
+                    fill="#d4a843"
+                  />
+                  <defs>
+                    <radialGradient id="seal-grad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#f0e0b0" />
+                      <stop offset="60%" stopColor="#d4a843" />
+                      <stop offset="100%" stopColor="#a67c22" />
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
             </motion.div>
 
             {stage === "idle" && (
