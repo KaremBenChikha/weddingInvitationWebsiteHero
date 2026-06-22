@@ -28,6 +28,11 @@ export function Footer() {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
+        <img
+          src="/images/decorative-art.svg"
+          alt=""
+          className="w-full max-w-xs mx-auto mb-8 gold-svg-filter opacity-40"
+        />
         <p className="font-display text-3xl md:text-4xl gold-text mb-2">
           {COUPLE.latin}
         </p>
