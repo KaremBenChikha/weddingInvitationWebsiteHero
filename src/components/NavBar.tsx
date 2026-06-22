@@ -1,31 +1,24 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { WEDDING } from "@/lib/constants";
 
 const sections = [
-  { id: "hero", label: "Accueil", labelAr: "الرئيسية" },
-  { id: "invitation", label: "Invitation", labelAr: "الدعوة" },
-  { id: "timeline", label: "Programme", labelAr: "البرنامج" },
-  { id: "rsvp", label: "RSVP", labelAr: "تأكيد" },
-  { id: "map", label: "Carte", labelAr: "الخريطة" },
+  { id: "invitation", label: "Invitation", labelAr: "الدعوة", icon: "envelope" },
+  { id: "timeline", label: "Programme", labelAr: "البرنامج", icon: "clock" },
+  { id: "hero", label: "Accueil", labelAr: "الرئيسية", icon: "home" },
+  { id: "rsvp", label: "RSVP", labelAr: "تأكيد", icon: "check" },
+  { id: "map", label: "Carte", labelAr: "الخريطة", icon: "map" },
 ];
 
 export function NavBar() {
-  const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState("hero");
-  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 80);
-      setShowBackToTop(y > window.innerHeight);
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i].id);
-        if (el && el.getBoundingClientRect().top < 200) {
+        if (el && el.getBoundingClientRect().top < 300) {
           setActive(sections[i].id);
           break;
         }
@@ -45,60 +38,125 @@ export function NavBar() {
   const scrollTo = useCallback((id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 64;
+    const top = el.getBoundingClientRect().top + window.scrollY - 16;
     window.scrollTo({ top, behavior: "smooth" });
   }, []);
 
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-[2147483646] transition-all duration-500 ${
-          visible && scrolled
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0"
-        }`}
-      >
-        <div className="bg-surface/85 backdrop-blur-md border-b border-border/60">
-          <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-            <button
-              onClick={() => scrollTo("hero")}
-              className="font-display text-sm text-gold-accent hover:text-gold-light transition-colors cursor-pointer whitespace-nowrap"
-            >
-              {WEDDING.date}
-            </button>
+    <nav
+      className={`fixed bottom-0 left-0 right-0 z-[2147483646] transition-all duration-500 ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+      }`}
+      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+    >
+      <div className="bg-surface/70 backdrop-blur-xl border-t border-border/50">
+        <div className="max-w-lg mx-auto flex items-center justify-around h-16 md:h-18 px-2">
+          {sections.map((s, i) => {
+            const isCenter = i === 2;
 
-            <div className="flex items-center gap-1 md:gap-4 overflow-x-auto scrollbar-hide" style={{ scrollbarWidth: "none" }}>
-              {sections.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => scrollTo(s.id)}
-                  className={`px-2 md:px-3 py-1.5 text-xs md:text-sm font-body transition-all duration-300 rounded-sm cursor-pointer whitespace-nowrap ${
-                    active === s.id
-                      ? "text-gold-accent bg-gold-accent/10"
-                      : "text-text/60 hover:text-text/90 hover:bg-surface-alt"
-                  }`}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </div>
-          </div>
+            return (
+              <button
+                key={s.id}
+                onClick={() => scrollTo(s.id)}
+                className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer ${
+                  isCenter
+                    ? "w-12 h-12 md:w-14 md:h-14 -mt-4 rounded-full bg-gold-accent text-text shadow-[0_0_20px_rgba(212,168,67,0.3)] hover:shadow-[0_0_30px_rgba(212,168,67,0.5)] hover:scale-105"
+                    : "px-2 py-1 rounded-lg"
+                } ${
+                  !isCenter && active === s.id
+                    ? "text-gold-accent"
+                    : !isCenter
+                      ? "text-text/50 hover:text-text/80"
+                      : ""
+                }`}
+                aria-label={`${s.label} / ${s.labelAr}`}
+              >
+                {s.icon === "envelope" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={isCenter ? "text-text" : ""}
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 6L12 13L22 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+                {s.icon === "clock" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={isCenter ? "text-text" : ""}
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6V12L16 14" strokeLinecap="round" />
+                  </svg>
+                )}
+                {s.icon === "home" && (
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-text"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M3 12L12 3L21 12" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5 10V20H19V10" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+                {s.icon === "check" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={isCenter ? "text-text" : ""}
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M8 12L11 15L16 9" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+                {s.icon === "map" && (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={isCenter ? "text-text" : ""}
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M12 22C12 22 19 16 19 10C19 6.134 15.866 3 12 3C8.134 3 5 6.134 5 10C5 16 12 22 12 22Z" />
+                    <circle cx="12" cy="10" r="2" />
+                  </svg>
+                )}
+
+                {!isCenter && (
+                  <span className="text-[10px] md:text-xs font-body leading-none">
+                    {s.label}
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
-      </nav>
-
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-20 right-6 z-[2147483646] w-10 h-10 rounded-full bg-surface/80 backdrop-blur-sm border border-gold-accent/30 flex items-center justify-center hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300 cursor-pointer ${
-          visible && showBackToTop
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4 pointer-events-none"
-        }`}
-        aria-label="Retour en haut"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent">
-          <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-    </>
+      </div>
+    </nav>
   );
 }

@@ -27,7 +27,7 @@ export default function Home() {
     <>
       {!popupDismissed && <EnvelopeReveal onDismiss={handleDismiss} />}
 
-      <main id="main-content">
+      <main id="main-content" className="pb-20">
         <GoldParticles />
         <HeroSection />
         <InvitationSection />
