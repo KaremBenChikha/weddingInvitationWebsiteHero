@@ -132,9 +132,9 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               background:
-                "linear-gradient(90deg, rgba(250,248,244,0.97) 0%, rgba(250,248,244,0.65) 100%)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
+                "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.45) 100%)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
             }}
           />
 
@@ -148,11 +148,36 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               background:
-                "linear-gradient(270deg, rgba(250,248,244,0.97) 0%, rgba(250,248,244,0.65) 100%)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
+                "linear-gradient(270deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.45) 100%)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
             }}
           />
+
+          {/* Gold parting line — where curtain edges meet */}
+          {stage === "idle" && (
+            <motion.div
+              className="absolute top-0 bottom-0 left-1/2 w-px z-10 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(180deg, transparent 15%, rgba(212,168,67,0.4) 30%, rgba(212,168,67,0.7) 45%, rgba(212,168,67,0.95) 50%, rgba(212,168,67,0.7) 55%, rgba(212,168,67,0.4) 70%, transparent 85%)",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
+          )}
+          {stage === "opening" && (
+            <motion.div
+              className="absolute top-0 bottom-0 left-1/2 w-px z-10 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(180deg, transparent 15%, rgba(212,168,67,0.4) 30%, rgba(212,168,67,0.7) 45%, rgba(212,168,67,0.95) 50%, rgba(212,168,67,0.7) 55%, rgba(212,168,67,0.4) 70%, transparent 85%)",
+              }}
+              animate={{ opacity: [1, 0], scaleX: [1, 2] }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            />
+          )}
 
           {/* Bismillah Wax Seal */}
           <motion.div
@@ -177,26 +202,26 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
                   : { duration: 0.6, ease: "easeInOut" }
             }
           >
-            {/* Outer deep gold ring */}
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#b8860b] via-[#a67c22] to-[#8b6914] flex items-center justify-center shadow-[0_0_60px_rgba(212,168,67,0.3)]">
-              {/* Inner ring */}
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold-accent/40 flex items-center justify-center bg-[#7a5c18]/30 backdrop-blur-sm">
-                {/* Bismillah text */}
+            {/* Outer gold ring — white + gold perimeter */}
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#e8d5a3] via-[#d4a843] to-[#c4983d] flex items-center justify-center shadow-[0_0_50px_rgba(212,168,67,0.5),0_0_100px_rgba(212,168,67,0.2)]">
+              {/* Inner ring — frosted white glass */}
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-sm shadow-[inset_0_0_30px_rgba(255,255,255,0.15)]">
+                {/* Bismillah text — white with gold glow */}
                 <div className="text-center px-3">
                   <p
-                    className="font-arabic-display text-xl md:text-2xl leading-relaxed tracking-wide gold-text text-shadow-gold"
+                    className="font-arabic-display text-xl md:text-2xl leading-relaxed tracking-wide text-white text-shadow-gold"
                     dir="rtl"
                   >
                     بسم الله
                   </p>
                   <p
-                    className="font-arabic-display text-lg md:text-xl leading-relaxed gold-text text-shadow-gold mt-0.5"
+                    className="font-arabic-display text-lg md:text-xl leading-relaxed text-white text-shadow-gold mt-0.5"
                     dir="rtl"
                   >
                     الرحمن
                   </p>
                   <p
-                    className="font-arabic-display text-lg md:text-xl leading-relaxed gold-text text-shadow-gold"
+                    className="font-arabic-display text-lg md:text-xl leading-relaxed text-white text-shadow-gold"
                     dir="rtl"
                   >
                     الرحيم
