@@ -42,6 +42,12 @@ export function InvitationSection() {
           <div className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-gold-accent/30" />
           <div className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-gold-accent/30" />
 
+          <img
+            src="/images/bismillah-invitation.svg"
+            alt="بسم الله الرحمن الرحيم"
+            className="w-full max-w-[280px] mx-auto mb-6 h-auto"
+          />
+
           <p className="font-body text-xl md:text-2xl text-text/90 leading-relaxed mb-6">
             {CONTENT.invitationLine1}
           </p>

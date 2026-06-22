@@ -6,14 +6,14 @@ import { SectionWrapper } from "./ui/SectionWrapper";
 import { CONTENT } from "@/lib/constants";
 
 const photos = [
-  { id: 1, bg: "#ede8df" },
-  { id: 2, bg: "#e8e2d8" },
-  { id: 3, bg: "#f0ebe5" },
-  { id: 4, bg: "#ece6db" },
-  { id: 5, bg: "#e5dfd4" },
-  { id: 6, bg: "#f2ede8" },
-  { id: 7, bg: "#f0ece3" },
-  { id: 8, bg: "#eae4da" },
+  { id: 1, src: "/images/gallery-1.jpg" },
+  { id: 2, src: "/images/gallery-2.jpg" },
+  { id: 3, src: "/images/gallery-3.jpg" },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+  { id: 7 },
+  { id: 8 },
 ];
 
 export function GallerySection() {
@@ -80,9 +80,19 @@ export function GallerySection() {
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-gold-accent/30 z-20 pointer-events-none" />
 
               <div
-                className="w-full h-full rounded-sm"
-                style={{ background: `linear-gradient(135deg, ${photo.bg}, #faf8f4)` }}
-              />
+                className="w-full h-full rounded-sm overflow-hidden"
+              >
+                {photo.src ? (
+                  <img
+                    src={photo.src}
+                    alt={`Photo ${photo.id}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-border via-surface-alt to-border" />
+                )}
+              </div>
 
               {/* Diamond center */}
               <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
