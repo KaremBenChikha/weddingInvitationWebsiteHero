@@ -113,6 +113,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
           {/* Glass curtain - left */}
           <motion.div
             className="absolute top-0 bottom-0 z-10 pointer-events-none"
+            initial={{ left: "0%", right: "50%" }}
             animate={{
               left: stage === "idle" ? "0%" : "-50%",
               right: stage === "idle" ? "50%" : "100%",
@@ -130,6 +131,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
           {/* Glass curtain - right */}
           <motion.div
             className="absolute top-0 bottom-0 z-10 pointer-events-none"
+            initial={{ right: "0%", left: "50%" }}
             animate={{
               right: stage === "idle" ? "0%" : "-50%",
               left: stage === "idle" ? "50%" : "100%",
