@@ -25,7 +25,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
   const handleTap = useCallback(() => {
     if (stage !== "idle") return;
     setStage("opening");
-    setTimeout(() => setStage("revealed"), 500);
+    setTimeout(() => setStage("revealed"), 300);
     setTimeout(() => {
       setStage("dissolving");
       document.body.style.overflow = "";
@@ -132,9 +132,10 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               background:
-                "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.45) 100%)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
+                "linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.2) 100%)",
+              backdropFilter: "blur(28px) saturate(140%)",
+              WebkitBackdropFilter: "blur(28px) saturate(140%)",
+              borderRight: "1px solid rgba(212,168,67,0.25)",
             }}
           />
 
@@ -148,9 +149,10 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               background:
-                "linear-gradient(270deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.45) 100%)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
+                "linear-gradient(270deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.2) 100%)",
+              backdropFilter: "blur(28px) saturate(140%)",
+              WebkitBackdropFilter: "blur(28px) saturate(140%)",
+              borderLeft: "1px solid rgba(212,168,67,0.25)",
             }}
           />
 
@@ -202,26 +204,26 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
                   : { duration: 0.6, ease: "easeInOut" }
             }
           >
-            {/* Outer gold ring — white + gold perimeter */}
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#e8d5a3] via-[#d4a843] to-[#c4983d] flex items-center justify-center shadow-[0_0_50px_rgba(212,168,67,0.5),0_0_100px_rgba(212,168,67,0.2)]">
-              {/* Inner ring — frosted white glass */}
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-white/40 flex items-center justify-center bg-white/10 backdrop-blur-sm shadow-[inset_0_0_30px_rgba(255,255,255,0.15)]">
-                {/* Bismillah text — white with gold glow */}
+            {/* Ivory wax seal body — gold-text lettering */}
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#faf5ed] via-[#f5efe4] to-[#ede0cc] flex items-center justify-center shadow-[0_0_40px_rgba(212,168,67,0.35),0_0_80px_rgba(212,168,67,0.15),inset_0_0_30px_rgba(0,0,0,0.06)] border-2 border-gold-accent/30">
+              {/* Inner stamp ring — debossed into wax */}
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold-accent/25 flex items-center justify-center bg-[#ede0cc]/30 shadow-[inset_0_2px_8px_rgba(0,0,0,0.08)]">
+                {/* Bismillah text — gold lettering on ivory wax */}
                 <div className="text-center px-3">
                   <p
-                    className="font-arabic-display text-xl md:text-2xl leading-relaxed tracking-wide text-white text-shadow-gold"
+                    className="font-arabic-display text-xl md:text-2xl leading-relaxed tracking-wide gold-text text-shadow-gold"
                     dir="rtl"
                   >
                     بسم الله
                   </p>
                   <p
-                    className="font-arabic-display text-lg md:text-xl leading-relaxed text-white text-shadow-gold mt-0.5"
+                    className="font-arabic-display text-lg md:text-xl leading-relaxed gold-text text-shadow-gold mt-0.5"
                     dir="rtl"
                   >
                     الرحمن
                   </p>
                   <p
-                    className="font-arabic-display text-lg md:text-xl leading-relaxed text-white text-shadow-gold"
+                    className="font-arabic-display text-lg md:text-xl leading-relaxed gold-text text-shadow-gold"
                     dir="rtl"
                   >
                     الرحيم
@@ -243,11 +245,11 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
               >
                 {/* Golden chandelier */}
                 <motion.div
-                  initial={{ y: -60, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
+                  initial={{ y: -30, opacity: 0, scale: 0.9 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
                   transition={{
-                    duration: 0.8,
-                    delay: 0.1,
+                    duration: 0.7,
+                    delay: 0.05,
                     ease: [0.16, 1, 0.3, 1],
                   }}
                 >
