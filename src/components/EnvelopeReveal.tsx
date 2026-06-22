@@ -28,11 +28,11 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
     setTimeout(() => {
       setStage("dissolving");
       document.body.style.overflow = "";
-    }, 2200);
+    }, 600);
     setTimeout(() => {
       setVisible(false);
-      setTimeout(onDismiss, 400);
-    }, 2600);
+      setTimeout(onDismiss, 300);
+    }, 1000);
   }, [stage, onDismiss]);
 
   const handleKeyDown = useCallback(
