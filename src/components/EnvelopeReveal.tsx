@@ -177,10 +177,10 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
                   : { duration: 0.6, ease: "easeInOut" }
             }
           >
-            {/* Outer dark amber ring */}
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-amber-800 via-amber-700 to-amber-900 flex items-center justify-center shadow-[0_0_60px_rgba(212,168,67,0.25)]">
+            {/* Outer deep gold ring */}
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#b8860b] via-[#a67c22] to-[#8b6914] flex items-center justify-center shadow-[0_0_60px_rgba(212,168,67,0.3)]">
               {/* Inner ring */}
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold-accent/40 flex items-center justify-center bg-amber-950/30 backdrop-blur-sm">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold-accent/40 flex items-center justify-center bg-[#7a5c18]/30 backdrop-blur-sm">
                 {/* Bismillah text */}
                 <div className="text-center px-3">
                   <p
@@ -227,27 +227,55 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
                   }}
                 >
                   <svg
-                    width="100"
-                    height="90"
-                    viewBox="0 0 100 90"
+                    width="140"
+                    height="200"
+                    viewBox="0 0 140 200"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     className="text-gold-accent"
                   >
-                    <line x1="50" y1="0" x2="50" y2="12" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M45 3C45 3 47 2 50 2C53 2 55 3 55 3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                    <path d="M28 12L38 16L50 12L62 16L72 12" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                    <path d="M24 16C24 16 20 28 24 36" stroke="currentColor" strokeWidth="1" fill="none" />
-                    <path d="M76 16C76 16 80 28 76 36" stroke="currentColor" strokeWidth="1" fill="none" />
-                    <rect x="30" y="16" width="40" height="14" rx="2" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="1" />
-                    <rect x="34" y="20" width="32" height="7" rx="1.5" fill="currentColor" fillOpacity="0.08" />
-                    <circle cx="18" cy="34" r="2.5" fill="currentColor" fillOpacity="0.5" />
-                    <circle cx="32" cy="36" r="2.5" fill="currentColor" fillOpacity="0.5" />
-                    <circle cx="50" cy="37" r="2.5" fill="currentColor" fillOpacity="0.7" />
-                    <circle cx="68" cy="36" r="2.5" fill="currentColor" fillOpacity="0.5" />
-                    <circle cx="82" cy="34" r="2.5" fill="currentColor" fillOpacity="0.5" />
-                    <circle cx="50" cy="37" r="16" fill="currentColor" fillOpacity="0.06" />
-                    <circle cx="50" cy="37" r="10" fill="currentColor" fillOpacity="0.04" />
+                    <line x1="70" y1="0" x2="70" y2="20" stroke="currentColor" strokeWidth="1.5" />
+                    <line x1="70" y1="20" x2="70" y2="25" stroke="currentColor" strokeWidth="3" />
+                    <path d="M40 25 Q55 15 70 25 Q85 15 100 25" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                    <path d="M40 25 Q40 35 50 38" stroke="currentColor" strokeWidth="1" fill="none" />
+                    <path d="M100 25 Q100 35 90 38" stroke="currentColor" strokeWidth="1" fill="none" />
+                    <ellipse cx="70" cy="30" rx="35" ry="5" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.08" />
+                    <ellipse cx="70" cy="30" rx="25" ry="3" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                    <line x1="45" y1="30" x2="45" y2="55" stroke="currentColor" strokeWidth="0.8" />
+                    <line x1="95" y1="30" x2="95" y2="55" stroke="currentColor" strokeWidth="0.8" />
+                    <line x1="55" y1="30" x2="55" y2="50" stroke="currentColor" strokeWidth="0.8" />
+                    <line x1="85" y1="30" x2="85" y2="50" stroke="currentColor" strokeWidth="0.8" />
+                    <line x1="70" y1="30" x2="70" y2="55" stroke="currentColor" strokeWidth="0.8" />
+                    <path d="M30 55 Q30 70 40 80 L100 80 Q110 70 110 55" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.06" />
+                    <path d="M35 55 Q35 65 42 75 L98 75 Q105 65 105 55" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                    <rect x="40" y="55" width="60" height="4" rx="2" stroke="currentColor" strokeWidth="1" fill="currentColor" fillOpacity="0.1" />
+                    <rect x="45" y="62" width="50" height="3" rx="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                    <path d="M40 75 L38 85 L42 85 Z" fill="currentColor" fillOpacity="0.3" />
+                    <path d="M100 75 L98 85 L102 85 Z" fill="currentColor" fillOpacity="0.3" />
+                    <path d="M55 78 L53 86 L57 86 Z" fill="currentColor" fillOpacity="0.25" />
+                    <path d="M85 78 L83 86 L87 86 Z" fill="currentColor" fillOpacity="0.25" />
+                    <path d="M70 80 L68 90 L72 90 Z" fill="currentColor" fillOpacity="0.35" />
+                    <path d="M25 55 Q15 70 20 95" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                    <path d="M115 55 Q125 70 120 95" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                    <path d="M35 60 Q28 75 30 90" stroke="currentColor" strokeWidth="1" fill="none" />
+                    <path d="M105 60 Q112 75 110 90" stroke="currentColor" strokeWidth="1" fill="none" />
+                    <ellipse cx="70" cy="82" rx="30" ry="4" stroke="currentColor" strokeWidth="1" fill="currentColor" fillOpacity="0.08" />
+                    <circle cx="20" cy="97" r="4" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="30" cy="92" r="3.5" fill="currentColor" fillOpacity="0.4" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="50" cy="88" r="3.5" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="70" cy="90" r="4" fill="currentColor" fillOpacity="0.7" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="90" cy="88" r="3.5" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="110" cy="92" r="3.5" fill="currentColor" fillOpacity="0.4" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="120" cy="97" r="4" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="20" cy="97" r="10" fill="currentColor" fillOpacity="0.08" />
+                    <circle cx="70" cy="90" r="14" fill="currentColor" fillOpacity="0.1" />
+                    <circle cx="120" cy="97" r="10" fill="currentColor" fillOpacity="0.08" />
+                    <path d="M65 90 L63 105 L67 105 Z" fill="currentColor" fillOpacity="0.2" />
+                    <path d="M75 90 L73 105 L77 105 Z" fill="currentColor" fillOpacity="0.2" />
+                    <path d="M70 95 L68 115 L72 115 Z" fill="currentColor" fillOpacity="0.3" />
+                    <circle cx="70" cy="118" r="2" fill="currentColor" fillOpacity="0.4" />
+                    <path d="M67 82 L70 95 L73 82" stroke="currentColor" strokeWidth="0.8" fill="none" />
+                    <circle cx="70" cy="82" r="2" fill="currentColor" fillOpacity="0.3" />
                   </svg>
                 </motion.div>
 

@@ -44,7 +44,7 @@ export function NavBar() {
 
   return (
     <nav
-      className={`fixed bottom-6 left-4 right-4 z-[2147483646] transition-all duration-500 max-w-sm mx-auto ${
+      className={`fixed bottom-6 left-4 right-4 z-[2147483646] transition-all duration-500 max-w-lg mx-auto ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
     >
@@ -59,7 +59,7 @@ export function NavBar() {
                 onClick={() => scrollTo(s.id)}
                 className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer ${
                   isCenter
-                    ? "w-10 h-10 md:w-11 md:h-11 -mt-5 rounded-full bg-gold-accent text-text shadow-[0_0_20px_rgba(212,168,67,0.3)] hover:shadow-[0_0_30px_rgba(212,168,67,0.5)] hover:scale-105"
+                    ? "w-10 h-10 rounded-full bg-gold-accent/10 text-gold-accent hover:bg-gold-accent/20"
                     : "px-2 py-1 rounded-lg"
                 } ${
                   !isCenter && active === s.id
@@ -102,17 +102,16 @@ export function NavBar() {
                 )}
                 {s.icon === "home" && (
                   <svg
-                    width="22"
-                    height="22"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-text"
+                    className="text-gold-accent"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="1.5"
                   >
-                    <path d="M3 12L12 3L21 12" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M5 10V20H19V10" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                   </svg>
                 )}
                 {s.icon === "check" && (
