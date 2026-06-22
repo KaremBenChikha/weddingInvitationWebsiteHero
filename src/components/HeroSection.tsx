@@ -17,6 +17,18 @@ export function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
+        {/* Chandelier */}
+        <div className="flex justify-center mb-4">
+          <div className="overflow-hidden h-[120px] md:h-[160px]">
+            <img
+              src="/images/chandelier-ornate.svg"
+              alt=""
+              className="w-auto h-full"
+              style={{ objectFit: "cover", objectPosition: "bottom center" }}
+            />
+          </div>
+        </div>
+
         <p className="font-body text-gold-accent/80 text-sm tracking-[0.25em] uppercase mb-4">
           {WEDDING.date}
         </p>
@@ -44,18 +56,7 @@ export function HeroSection() {
         </p>
       </motion.div>
 
-      {/* Right: Photo placeholder */}
-      <motion.div
-        className="flex md:hidden w-full aspect-[4/3] items-center justify-center bg-surface-alt overflow-hidden order-first"
-        initial={reduce ? false : { opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="absolute inset-4 border border-gold-accent/20 rounded-sm" />
-          <div className="w-3/5 aspect-[3/4] bg-gradient-to-br from-border via-surface-alt to-border rounded-sm" />
-        </div>
-      </motion.div>
+      {/* Right: Photo placeholder - desktop only */}
       <motion.div
         className="hidden md:flex flex-1 h-full items-center justify-center bg-surface-alt overflow-hidden"
         initial={reduce ? false : { opacity: 0, x: 24 }}

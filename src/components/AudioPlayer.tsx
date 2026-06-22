@@ -42,7 +42,7 @@ export function AudioPlayer() {
     <div
       className="fixed right-6 z-[2147483647] transition-all duration-500"
       style={{
-        bottom: "calc(env(safe-area-inset-bottom, 0px) + 1.5rem)",
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 5.5rem)",
         opacity: visible ? 1 : 0,
         visibility: visible ? "visible" : "hidden",
       }}

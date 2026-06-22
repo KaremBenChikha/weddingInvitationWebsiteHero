@@ -8,7 +8,7 @@ interface EnvelopeRevealProps {
   onDismiss: () => void;
 }
 
-type Stage = "idle" | "opening" | "revealed" | "dissolving";
+type Stage = "idle" | "opening" | "dissolving";
 
 export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
   const reduce = useReducedMotion();
@@ -25,7 +25,6 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
   const handleTap = useCallback(() => {
     if (stage !== "idle") return;
     setStage("opening");
-    setTimeout(() => setStage("revealed"), 300);
     setTimeout(() => {
       setStage("dissolving");
       document.body.style.overflow = "";
@@ -222,61 +221,6 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
               </div>
             </div>
           </motion.div>
-
-          {/* Revealed stage: chandelier + names */}
-          <AnimatePresence>
-            {stage === "revealed" && (
-              <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-center px-6 z-20"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {/* Golden chandelier */}
-                <motion.div
-                  initial={{ y: -30, opacity: 0, scale: 0.9 }}
-                  animate={{ y: 0, opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.05,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                >
-                  <div className="overflow-hidden h-[200px] md:h-[260px]">
-                    <img
-                      src="/images/chandelier-ornate.svg"
-                      alt=""
-                      className="w-auto h-full"
-                      style={{ objectFit: "cover", objectPosition: "bottom center" }}
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Couple names */}
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="text-center mt-4"
-                >
-                  <h1
-                    className="font-arabic-display text-5xl md:text-7xl gold-text text-shadow-gold mb-3"
-                    dir="rtl"
-                  >
-                    {COUPLE.arabic}
-                  </h1>
-                  <p className="font-display text-3xl md:text-4xl text-gold-accent/70">
-                    {COUPLE.latin}
-                  </p>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
 
         </motion.div>

@@ -1,0 +1,115 @@
+================================================================
+   RSVP GOOGLE SHEETS SETUP — Wedding Invitation (Aicha & Zakaria)
+================================================================
+
+This guide will connect your wedding RSVP form to a Google Sheet so every
+confirmation is automatically saved in a spreadsheet.
+
+Follow these steps in order.
+
+
+STEP 1: Create the Google Sheet
+-------------------------------
+1. Go to https://sheets.google.com
+2. Click the "+" (Blank) button to create a new spreadsheet
+3. Name it "Wedding RSVP" (or anything you prefer)
+4. In the first row, add these column headers:
+   A: Timestamp
+   B: Name
+   C: Guests
+   D: Message
+5. Leave all other cells empty
+
+
+STEP 2: Open the Apps Script editor
+------------------------------------
+1. In your spreadsheet, click Extensions > Apps Script
+2. A new tab opens with a code editor
+3. Delete any existing code in the editor
+4. Copy the ENTIRE code block below and paste it into the editor:
+
+```
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var name = e.parameter.name || '';
+    var guests = e.parameter.guests || '1';
+    var message = e.parameter.message || '';
+
+    sheet.appendRow([
+      new Date(),
+      name,
+      guests,
+      message
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+```
+
+5. Click the Save icon (or press Ctrl+S / Cmd+S)
+6. Give the project a name like "Wedding RSVP Script" and click OK
+
+
+STEP 3: Deploy as a web app
+------------------------------
+1. Click the blue "Deploy" button (top right) > New deployment
+2. Click the gear icon next to "Select type" and choose "Web app"
+3. Fill in the deployment settings:
+   - Description: "Wedding RSVP" (anything is fine)
+   - Execute as: "Me (your-email@gmail.com)"
+   - Who has access: "Anyone"
+4. Click "Deploy"
+5. A popup appears — click "Authorize access"
+6. Choose your Google account
+7. You may see "Google hasn't verified this app" — click "Advanced"
+   then "Go to Wedding RSVP Script (unsafe)"
+8. Click "Allow"
+9. You'll see a "Deployment ID" and a long URL — COPY THE URL
+10. Click "Done"
+
+
+STEP 4: Update the website with the URL
+----------------------------------------
+1. Open this file in the project:
+   src/lib/constants.ts
+2. Find the line that starts with:
+   export const RSVP_URL = "..."
+3. Replace the URL inside the quotes with the URL you copied in Step 3.9
+   (Keep the quotes and the semicolon at the end)
+4. Save the file
+5. Rebuild and redeploy the website
+
+
+STEP 5: Test it
+----------------
+1. Go to your wedding website
+2. Scroll to the RSVP section
+3. Fill in the form with test data and click "Envoyer"
+4. Go back to your Google Sheet — you should see the test entry appear
+5. If it doesn't appear, check:
+   - Is the URL in constants.ts exactly the deployment URL?
+   - Did you set "Who has access" to "Anyone"?
+   - Did you redeploy the website after changing the URL?
+
+
+TROUBLESHOOTING
+----------------
+- "Script not found" error → Re-deploy the script (Step 3). Sometimes
+  Google creates a new URL for each deployment.
+- Entries not appearing → Check that the sheet name is "Sheet1" (the
+  default). If you renamed it, the script still works with
+  getActiveSheet().
+- "no-cors" errors → This is normal. The script uses no-cors mode.
+  Data IS being sent even if the browser console shows an error.
+
+================================================================
+   You're done! Every RSVP will now be saved to your spreadsheet.
+================================================================
