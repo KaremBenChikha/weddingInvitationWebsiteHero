@@ -82,4 +82,4 @@ export const CONTACT_CONTENT = {
   subtextAr: "لا تترددوا في الاتصال بنا",
 };
 
-export const RSVP_URL = "https://script.google.com/macros/s/AKfycbxmuUmLqsZnUyD0iuqG_TszslSWl5kOWiee0X00ld27iMnLsg9a_OBSFjagmZqUwLQj/exec";
+export const RSVP_URL = "https://script.google.com/macros/s/AKfycbxptnN1qAA2Krdxqv-09gOZ6ndHAZkb2y6Uu1iot2QnSgFKQroLpGL19pr7d_6W-e8Z/exec";

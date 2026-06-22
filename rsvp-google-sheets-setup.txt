@@ -76,16 +76,12 @@ STEP 3: Deploy as a web app
 10. Click "Done"
 
 
-STEP 4: Update the website with the URL
+STEP 4: Send the URL for deployment
 ----------------------------------------
-1. Open this file in the project:
-   src/lib/constants.ts
-2. Find the line that starts with:
-   export const RSVP_URL = "..."
-3. Replace the URL inside the quotes with the URL you copied in Step 3.9
-   (Keep the quotes and the semicolon at the end)
-4. Save the file
-5. Rebuild and redeploy the website
+1. Copy the URL from Step 3.9
+2. Send it to your developer (Karem) via WhatsApp/email/telegram
+3. The developer will update src/lib/constants.ts and redeploy
+4. The website will be live with the new RSVP link automatically
 
 
 STEP 5: Test it
