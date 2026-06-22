@@ -8,10 +8,13 @@ export function Footer() {
 
   return (
     <footer className="relative bg-surface-alt overflow-hidden">
-      {/* Large photo placeholder with gradient fade */}
+      {/* Barakat calligraphy */}
       <div className="relative w-full max-w-lg mx-auto">
-        {/* Photo */}
-        <div className="w-full aspect-[4/5] bg-gradient-to-br from-border via-surface-alt to-border rounded-b-[30px] overflow-hidden" />
+        <img
+          src="/images/barakat.svg"
+          alt="بسم الله الرحمن الرحيم"
+          className="w-full h-auto"
+        />
 
         {/* Gradient fade overlay on top */}
         <div
