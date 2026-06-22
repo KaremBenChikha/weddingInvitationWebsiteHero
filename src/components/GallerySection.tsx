@@ -9,11 +9,6 @@ const photos = [
   { id: 1, src: "/images/gallery-1.jpg" },
   { id: 2, src: "/images/gallery-2.jpg" },
   { id: 3, src: "/images/gallery-3.jpg" },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
 ];
 
 export function GallerySection() {
@@ -79,37 +74,17 @@ export function GallerySection() {
               <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-gold-accent/30 z-20 pointer-events-none" />
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-gold-accent/30 z-20 pointer-events-none" />
 
-              <div
-                className="w-full h-full rounded-sm overflow-hidden"
-              >
-                {photo.src ? (
-                  <img
-                    src={photo.src}
-                    alt={`Photo ${photo.id}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-border via-surface-alt to-border" />
-                )}
-              </div>
-
-              {/* Diamond center */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold-accent/15">
-                  <path d="M9 0L11.78 8.28L18 9L11.78 9.72L9 18L6.22 9.72L0 9L6.22 8.28L9 0Z" fill="currentColor" />
-                </svg>
+              <div className="w-full h-full rounded-sm overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt={`Photo ${photo.id}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
         </div>
-
-        <p className="font-body text-sm text-text/40 text-center mt-4 italic">
-          Photos à venir...
-        </p>
-        <p className="font-arabic text-xs text-text/30 text-center" dir="rtl">
-          الصور قريباً...
-        </p>
 
         {/* Dots */}
         <div className="flex justify-center gap-2 mt-6">
