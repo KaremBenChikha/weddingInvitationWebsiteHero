@@ -36,12 +36,6 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
     }, 2600);
   }, [stage, onDismiss]);
 
-  const handleSkip = useCallback(() => {
-    setVisible(false);
-    document.body.style.overflow = "";
-    setTimeout(onDismiss, 500);
-  }, [onDismiss]);
-
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -73,12 +67,6 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
               <p className="font-display text-2xl md:text-3xl text-gold-accent/70 mb-8">
                 {COUPLE.latin}
               </p>
-              <button
-                onClick={handleSkip}
-                className="font-body text-sm text-text/60 hover:text-gold-accent transition-colors cursor-pointer"
-              >
-                {CONTENT.envelopeSkip} / {CONTENT.envelopeSkipAr}
-              </button>
             </div>
           </motion.div>
         )}
@@ -343,18 +331,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             </motion.p>
           )}
 
-          {/* Skip button */}
-          {stage === "idle" && (
-            <motion.button
-              className="absolute bottom-12 left-1/2 -translate-x-1/2 font-body text-xs text-text/40 hover:text-gold-accent transition-colors cursor-pointer z-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2 }}
-              onClick={handleSkip}
-            >
-              {CONTENT.envelopeSkip} / {CONTENT.envelopeSkipAr}
-            </motion.button>
-          )}
+
         </motion.div>
       )}
     </AnimatePresence>
