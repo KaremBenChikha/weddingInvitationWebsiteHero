@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { EnvelopeReveal } from "@/components/EnvelopeReveal";
 import { HeroSection } from "@/components/HeroSection";
 import { InvitationSection } from "@/components/InvitationSection";
-import { DressCodeSection } from "@/components/DressCodeSection";
+
 import { TimelineSection } from "@/components/TimelineSection";
 import { GallerySection } from "@/components/GallerySection";
 import { RsvpSection } from "@/components/RsvpSection";
@@ -27,11 +27,10 @@ export default function Home() {
     <>
       {!popupDismissed && <EnvelopeReveal onDismiss={handleDismiss} />}
 
-      <main id="main-content" className="pb-20">
+      <main id="main-content" className="pb-24">
         <GoldParticles />
         <HeroSection />
         <InvitationSection />
-        <DressCodeSection />
         <TimelineSection />
         <GallerySection />
         <RsvpSection />

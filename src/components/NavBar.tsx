@@ -44,13 +44,12 @@ export function NavBar() {
 
   return (
     <nav
-      className={`fixed bottom-0 left-0 right-0 z-[2147483646] transition-all duration-500 ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+      className={`fixed bottom-6 left-4 right-4 z-[2147483646] transition-all duration-500 max-w-sm mx-auto ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
-      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
     >
-      <div className="bg-surface/70 backdrop-blur-xl border-t border-border/50">
-        <div className="max-w-lg mx-auto flex items-center justify-around h-16 md:h-18 px-2">
+      <div className="bg-surface/80 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+        <div className="flex items-center justify-around h-14 md:h-16 px-3">
           {sections.map((s, i) => {
             const isCenter = i === 2;
 
@@ -60,7 +59,7 @@ export function NavBar() {
                 onClick={() => scrollTo(s.id)}
                 className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer ${
                   isCenter
-                    ? "w-12 h-12 md:w-14 md:h-14 -mt-4 rounded-full bg-gold-accent text-text shadow-[0_0_20px_rgba(212,168,67,0.3)] hover:shadow-[0_0_30px_rgba(212,168,67,0.5)] hover:scale-105"
+                    ? "w-10 h-10 md:w-11 md:h-11 -mt-5 rounded-full bg-gold-accent text-text shadow-[0_0_20px_rgba(212,168,67,0.3)] hover:shadow-[0_0_30px_rgba(212,168,67,0.5)] hover:scale-105"
                     : "px-2 py-1 rounded-lg"
                 } ${
                   !isCenter && active === s.id

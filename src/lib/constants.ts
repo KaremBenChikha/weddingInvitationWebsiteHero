@@ -13,12 +13,12 @@ export const WEDDING = {
 };
 
 export const TIMELINE = [
-  { time: "14:00", labelFr: "Cérémonie", labelAr: "مراسم الزفاف" },
-  { time: "15:00", labelFr: "Cocktail", labelAr: "كوكتيل" },
-  { time: "16:30", labelFr: "Photos", labelAr: "جلسة تصوير" },
+  { time: "14:00", labelFr: "Cérémonie de mariage", labelAr: "مراسم الزفاف" },
+  { time: "15:00", labelFr: "Accueil des invités & Thé", labelAr: "استقبال الضيوف والشاي" },
+  { time: "16:30", labelFr: "Séance photos", labelAr: "جلسة تصوير" },
   { time: "17:30", labelFr: "Dîner", labelAr: "العشاء" },
-  { time: "19:00", labelFr: "Première danse", labelAr: "الرقصة الأولى" },
-  { time: "20:00", labelFr: "Fête & soirée", labelAr: "الحفل والسهرة" },
+  { time: "19:00", labelFr: "Cérémonie du thé & Pâtisseries", labelAr: "الشاي والحلويات" },
+  { time: "20:00", labelFr: "Soirée familiale", labelAr: "السهرة العائلية" },
 ];
 
 export const CONTACT = {
@@ -47,10 +47,6 @@ export const CONTENT = {
   timelineTitleAr: "برنامج اليوم",
   contactTitle: "Des questions ?",
   contactTitleAr: "أسئلة؟",
-  dressCodeTitle: "Tenue suggérée",
-  dressCodeTitleAr: "اللباس المقترح",
-  dressCodeBody: "Tenue de cérémonie élégante. Nous vous invitons à porter des tons chauds et dorés pour célébrer avec nous.",
-  dressCodeBodyAr: "ملابس أنيقة. ندعوكم لارتداء ألوان دافئة وذهبية للاحتفال معنا.",
   rsvpTitle: "Confirmez votre présence",
   rsvpTitleAr: "تأكيد الحضور",
   rsvpSubtitle: "Merci de confirmer avant le 15 Juin 2026",
@@ -85,13 +81,5 @@ export const CONTACT_CONTENT = {
   subtext: "N'hésitez pas à nous contacter",
   subtextAr: "لا تترددوا في الاتصال بنا",
 };
-
-export const DRESS_CODE_COLORS = [
-  { hex: "#d4a843", label: "Or" },
-  { hex: "#e8d5a3", label: "Champagne" },
-  { hex: "#c4825a", label: "Terracotta" },
-  { hex: "#8b6f5e", label: "Taupe" },
-  { hex: "#f5efe4", label: "Crème" },
-];
 
 export const RSVP_URL = "https://script.google.com/macros/s/AKfycbxmuUmLqsZnUyD0iuqG_TszslSWl5kOWiee0X00ld27iMnLsg9a_OBSFjagmZqUwLQj/exec";
