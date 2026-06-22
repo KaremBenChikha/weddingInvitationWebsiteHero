@@ -327,7 +327,7 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              {CONTENT.envelopeHint}
+              {CONTENT.envelopeHintAr}
             </motion.p>
           )}
 
