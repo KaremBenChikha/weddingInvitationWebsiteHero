@@ -321,18 +321,6 @@ export function EnvelopeReveal({ onDismiss }: EnvelopeRevealProps) {
             )}
           </AnimatePresence>
 
-          {/* Hint text */}
-          {stage === "idle" && (
-            <motion.p
-              className="absolute bottom-24 left-1/2 -translate-x-1/2 font-body text-sm text-text/50 animate-gold-shimmer z-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-            >
-              {CONTENT.envelopeHintAr}
-            </motion.p>
-          )}
-
 
         </motion.div>
       )}
