@@ -21,7 +21,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="bg-surface text-text min-h-screen">{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Aref+Ruqaa:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-surface text-text min-h-screen">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2147483647] focus:px-4 focus:py-2 focus:bg-surface focus:text-text focus:border focus:border-gold-accent focus:rounded-sm focus:outline-none"
+        >
+          Aller au contenu
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

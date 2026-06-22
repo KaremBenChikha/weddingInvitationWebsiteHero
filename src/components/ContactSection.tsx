@@ -1,4 +1,4 @@
-import { CONTACT, CONTENT } from "@/lib/constants";
+import { CONTACT, CONTENT, CONTACT_CONTENT } from "@/lib/constants";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { GoldDivider } from "./ui/GoldDivider";
 
@@ -15,10 +15,10 @@ export function ContactSection() {
         <GoldDivider />
 
         <p className="font-body text-lg text-text/70 mb-4">
-          N&apos;hésitez pas à nous contacter
+          {CONTACT_CONTENT.subtext}
         </p>
         <p className="font-arabic text-base text-text/60 mb-6" dir="rtl">
-          لا تترددوا في الاتصال بنا
+          {CONTACT_CONTENT.subtextAr}
         </p>
 
         <a

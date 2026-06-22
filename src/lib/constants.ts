@@ -81,6 +81,11 @@ export const CONTENT = {
   footerText: "Aicha & Zakaria",
 };
 
+export const CONTACT_CONTENT = {
+  subtext: "N'hésitez pas à nous contacter",
+  subtextAr: "لا تترددوا في الاتصال بنا",
+};
+
 export const DRESS_CODE_COLORS = [
   { hex: "#d4a843", label: "Or" },
   { hex: "#e8d5a3", label: "Champagne" },
