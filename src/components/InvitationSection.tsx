@@ -45,7 +45,7 @@ export function InvitationSection() {
           <img
             src="/images/bismillah-invitation.svg"
             alt="بسم الله الرحمن الرحيم"
-            className="w-full max-w-[280px] mx-auto mb-6 h-auto"
+            className="w-full h-auto mb-6 gold-svg-filter"
           />
 
           <p className="font-body text-xl md:text-2xl text-text/90 leading-relaxed mb-6">
