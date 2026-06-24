@@ -4,9 +4,7 @@ import { useState, useCallback } from "react";
 import { EnvelopeReveal } from "@/components/EnvelopeReveal";
 import { HeroSection } from "@/components/HeroSection";
 import { InvitationSection } from "@/components/InvitationSection";
-
-import { TimelineSection } from "@/components/TimelineSection";
-import { GallerySection } from "@/components/GallerySection";
+import { CountdownSection } from "@/components/CountdownSection";
 import { RsvpSection } from "@/components/RsvpSection";
 import { ContactSection } from "@/components/ContactSection";
 import { MapSection } from "@/components/MapSection";
@@ -31,8 +29,7 @@ export default function Home() {
         <GoldParticles />
         <HeroSection />
         <InvitationSection />
-        <TimelineSection />
-        <GallerySection />
+        <CountdownSection />
         <RsvpSection />
         <ContactSection />
         <MapSection />

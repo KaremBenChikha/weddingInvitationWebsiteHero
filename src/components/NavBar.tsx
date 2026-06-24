@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 
 const sections = [
   { id: "invitation", label: "Invitation", labelAr: "الدعوة", icon: "envelope" },
-  { id: "timeline", label: "Programme", labelAr: "البرنامج", icon: "clock" },
+  { id: "countdown", label: "Compte à rebours", labelAr: "العد التنازلي", icon: "clock" },
   { id: "hero", label: "Accueil", labelAr: "الرئيسية", icon: "home" },
   { id: "rsvp", label: "RSVP", labelAr: "تأكيد", icon: "check" },
   { id: "map", label: "Carte", labelAr: "الخريطة", icon: "map" },

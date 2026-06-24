@@ -86,8 +86,6 @@ export function RsvpSection() {
         <p className="font-arabic text-xl text-gold-accent/60 mb-2" dir="rtl">
           {CONTENT.rsvpTitleAr}
         </p>
-        <p className="font-body text-sm text-text/60 mb-8">{CONTENT.rsvpSubtitle}</p>
-
         <GoldDivider />
 
         <form onSubmit={handleSubmit} className="w-full space-y-5">
