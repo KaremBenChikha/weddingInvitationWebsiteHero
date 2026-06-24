@@ -29,7 +29,7 @@ export const CONTENT = {
   envelopeSkip: "Passer",
   envelopeSkipAr: "تخطي",
   envelopeLabel: "Invitation de mariage — اضغط لفتح الدعوة",
-  invitationLine1: "Nous invitons a notre acte de mariage",
+  invitationLine1: "Nous invitons à notre acte de mariage",
   invitationLine1Ar: "بقلوبٍ يملؤها الفرح",
   invitationLine2: "Célébrons ensemble le plus beau jour de notre vie",
   invitationLine2Ar: "في يومٍ جمع الله فيه القلوب",
