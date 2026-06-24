@@ -60,7 +60,7 @@ export function NavBar() {
                 className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer ${
                   isCenter
                     ? "w-10 h-10 rounded-full bg-gold-accent/10 text-gold-accent hover:bg-gold-accent/20"
-                    : "px-2 py-1 rounded-lg"
+                    : "px-2 py-1 rounded-lg flex-1 min-w-0"
                 } ${
                   !isCenter && active === s.id
                     ? "text-gold-accent"
@@ -146,7 +146,7 @@ export function NavBar() {
                 )}
 
                 {!isCenter && (
-                  <span className="text-[10px] md:text-xs font-body leading-none">
+                  <span className="text-[10px] md:text-xs font-body leading-none truncate max-w-full">
                     {s.label}
                   </span>
                 )}
