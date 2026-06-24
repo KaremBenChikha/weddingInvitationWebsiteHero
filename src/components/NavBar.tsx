@@ -3,11 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 
 const sections = [
-  { id: "invitation", label: "Invitation", labelAr: "الدعوة", icon: "envelope" },
-  { id: "countdown", label: "Compte à rebours", labelAr: "العد التنازلي", icon: "clock" },
-  { id: "hero", label: "Accueil", labelAr: "الرئيسية", icon: "home" },
-  { id: "rsvp", label: "RSVP", labelAr: "تأكيد", icon: "check" },
-  { id: "map", label: "Carte", labelAr: "الخريطة", icon: "map" },
+  { id: "invitation", label: "Invitation", icon: "envelope" },
+  { id: "countdown", label: "Countdown", icon: "clock" },
+  { id: "hero", label: "Accueil", icon: "home" },
+  { id: "rsvp", label: "RSVP", icon: "check" },
+  { id: "map", label: "Carte", icon: "map" },
 ];
 
 export function NavBar() {
@@ -49,7 +49,7 @@ export function NavBar() {
       }`}
     >
       <div className="bg-surface/80 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-        <div className="flex items-center justify-around h-14 md:h-16 px-3">
+        <div className="grid grid-cols-5 items-center h-14 md:h-16 px-2">
           {sections.map((s, i) => {
             const isCenter = i === 2;
 
@@ -57,18 +57,14 @@ export function NavBar() {
               <button
                 key={s.id}
                 onClick={() => scrollTo(s.id)}
-                className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer ${
+                className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-300 cursor-pointer w-full h-full rounded-xl ${
                   isCenter
-                    ? "w-10 h-10 rounded-full bg-gold-accent/10 text-gold-accent hover:bg-gold-accent/20"
-                    : "px-2 py-1 rounded-lg flex-1 min-w-0"
-                } ${
-                  !isCenter && active === s.id
                     ? "text-gold-accent"
-                    : !isCenter
-                      ? "text-text/50 hover:text-text/80"
-                      : ""
+                    : active === s.id
+                      ? "text-gold-accent"
+                      : "text-text/50 hover:text-text/80"
                 }`}
-                aria-label={`${s.label} / ${s.labelAr}`}
+                aria-label={s.label}
               >
                 {s.icon === "envelope" && (
                   <svg
@@ -77,7 +73,6 @@ export function NavBar() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={isCenter ? "text-text" : ""}
                     stroke="currentColor"
                     strokeWidth="1.5"
                   >
@@ -92,7 +87,6 @@ export function NavBar() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={isCenter ? "text-text" : ""}
                     stroke="currentColor"
                     strokeWidth="1.5"
                   >
@@ -107,7 +101,6 @@ export function NavBar() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-gold-accent"
                     stroke="currentColor"
                     strokeWidth="1.5"
                   >
@@ -121,7 +114,6 @@ export function NavBar() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={isCenter ? "text-text" : ""}
                     stroke="currentColor"
                     strokeWidth="1.5"
                   >
@@ -136,7 +128,6 @@ export function NavBar() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={isCenter ? "text-text" : ""}
                     stroke="currentColor"
                     strokeWidth="1.5"
                   >

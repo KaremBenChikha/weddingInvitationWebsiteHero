@@ -32,13 +32,6 @@ const statLabelsFr: Record<keyof Count, string> = {
   minutes: "Minutes",
   seconds: "Secondes",
 };
-const statLabelsAr: Record<keyof Count, string> = {
-  days: "يوم",
-  hours: "ساعة",
-  minutes: "دقيقة",
-  seconds: "ثانية",
-};
-
 export function CountdownSection() {
   const reduce = useReducedMotion();
   const [count, setCount] = useState<Count>(calcCount);
@@ -62,10 +55,6 @@ export function CountdownSection() {
         <h2 className="font-display text-3xl md:text-4xl text-gold-accent mb-2">
           {CONTENT.countdownTitle}
         </h2>
-        <p className="font-arabic text-xl text-gold-accent/60 mb-8" dir="rtl">
-          {CONTENT.countdownTitleAr}
-        </p>
-
         <GoldDivider />
 
         <div className="grid grid-cols-4 gap-3 md:gap-5 w-full max-w-lg mt-8">
@@ -90,18 +79,12 @@ export function CountdownSection() {
               <span className="font-body text-xs md:text-sm text-text/50 uppercase tracking-widest">
                 {statLabelsFr[key]}
               </span>
-              <span className="font-arabic text-xs text-text/30 mt-0.5" dir="rtl">
-                {statLabelsAr[key]}
-              </span>
             </motion.div>
           ))}
         </div>
 
         <p className="font-body text-sm text-text/40 mt-10 text-center leading-relaxed">
           {WEDDING.dateTime}
-        </p>
-        <p className="font-arabic text-sm text-text/25 mt-1" dir="rtl">
-          {WEDDING.dateLabelAr}
         </p>
       </motion.div>
     </SectionWrapper>
